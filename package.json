@@ -9,6 +9,8 @@
   "scripts": {
     "dev": "tsx src/main.ts",
     "start": "tsx src/main.ts",
+    "exercise": "node scripts/check-exercise.mjs",
+    "check:exercises": "node scripts/verify-exercises.mjs",
     "build": "tsc -p tsconfig.json",
     "check": "tsc --noEmit",
     "lint": "eslint src --max-warnings=0",

@@ -5,9 +5,16 @@
 
 Small exercises to get you used to reading and writing TypeScript code.
 
-## Status
+```ts
+// exercises/01_variables/variables1.ts
+function main(): void {
+  // TODO: Add the missing keyword to declare `x`.
+  x = 5; // error TS2304: Cannot find name 'x'.
+  console.log(`x has the value ${x}`);
+}
+```
 
-Scaffold stage — see `CONTRIBUTING.md` for the roadmap and exercise format.
+Fix the `// TODO:`, re-run, move to the next exercise.
 
 ## Quick start
 
@@ -17,34 +24,41 @@ Prerequisite: Node.js >= 20.
 git clone https://github.com/ahmedsliman/typescriptlings.git
 cd typescriptlings
 npm install
+npm run exercise -- variables1
 ```
 
-Work on an exercise manually (CLI runner in progress, see `CONTRIBUTING.md`):
+`npm run exercise -- <name>` typechecks the exercise and runs it if it
+passes. Each exercise file contains a `// TODO:` comment — fix the error
+until the typechecker passes, then compare with `solutions/` if you get stuck.
+(Full watch-mode CLI in progress, see `CONTRIBUTING.md`.)
 
-```bash
-npx tsc --noEmit --strict exercises/01_variables/variables1.ts  # check
-npx tsx exercises/01_variables/variables1.ts                    # run
+## Progress
+
+| Topic                | Exercises | Status                         |
+| -------------------- | --------- | ------------------------------ |
+| `00_intro`           | 2         | ✅ done                        |
+| `01_variables`       | 3         | ✅ done                        |
+| `02_functions`       | 3         | ✅ done                        |
+| `03_if`              | 1         | ✅ done                        |
+| `04_primitive_types` | 2         | ✅ done                        |
+| `05_arrays`          | 1         | ✅ done                        |
+| _more topics_        | —         | 🚧 planned (`CONTRIBUTING.md`) |
+
+## Layout
+
 ```
-
-Each exercise file contains a `// TODO:` comment. Fix the error until the
-typechecker passes, then compare with `solutions/` if you get stuck.
-
-## Layout (mirrors rustlings/)
-
-```
-src/            CLI + runner (commander, chokidar, execa)
+src/            CLI runner (in progress)
+scripts/        exercise helpers (check-exercise, verify-exercises)
 exercises/      <topic>/<name>.ts + README.md + info.toml
 solutions/      mirror of exercises/
-tests/          vitest integration tests
 ```
 
 ## How exercises are checked
 
-Each exercise is verified in three steps:
+1. **Typecheck** — `tsc --noEmit --strict` must pass (no type errors).
+2. **Run** — the exercise runs with `tsx` and its output is shown.
 
-1. **Typecheck** — `tsc --noEmit` must pass (no type errors).
-2. **Tests** — `vitest run <exercise>` must pass (for exercises with tests).
-3. **Lint** — `eslint --max-warnings=0` must pass (for `strictLint` exercises).
-
-The exercise is then run with `tsx <exercise>` and its output is shown.
-Progress is tracked in `.typescriptlings-state.txt` in the project root.
+Test-based (`vitest`) and lint-gated (`eslint`) exercises will follow the same
+pattern once those topics land. CI enforces the core invariant on every push:
+all unsolved exercises fail the typechecker, all solutions pass
+(`npm run check:exercises`).
