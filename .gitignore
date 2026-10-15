@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Build
+dist/
+coverage/
+
+# Logs
+*.log
+
+# State file (mirrors rustlings .rustlings-state.txt)
+.typescriptlings-state.txt
+
+# Analysis / working notes (not part of the shipped repo)
+ANALYSIS.md
+
+# OS
+.DS_Store
+
+# Editor
+*.swp
+.idea/
+*.iml
+.vscode/*
+!.vscode/extensions.json
