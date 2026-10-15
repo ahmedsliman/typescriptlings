@@ -30,12 +30,13 @@ solutions/      mirror of exercises/
 tests/          vitest integration tests
 ```
 
-## Execution model (vs `cargo build/test/clippy`)
+## How exercises are checked
 
-| Rustlings                  | TypeScriptlings (planned)                  |
-| -------------------------- | ------------------------------------------ |
-| `cargo build --bin`        | `tsc --noEmit` (typecheck exercise)        |
-| `cargo test --bin`         | `vitest run <file>` (or `node --test`)     |
-| `cargo clippy -D warnings` | `eslint --max-warnings=0`                  |
-| run `target/debug/<bin>`   | run `tsx <file>`                           |
-| `.rustlings-state.txt`     | `.typescriptlings-state.txt` (same format) |
+Each exercise is verified in three steps:
+
+1. **Typecheck** — `tsc --noEmit` must pass (no type errors).
+2. **Tests** — `vitest run <exercise>` must pass (for exercises with tests).
+3. **Lint** — `eslint --max-warnings=0` must pass (for `strictLint` exercises).
+
+The exercise is then run with `tsx <exercise>` and its output is shown.
+Progress is tracked in `.typescriptlings-state.txt` in the project root.

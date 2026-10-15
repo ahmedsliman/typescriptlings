@@ -24,7 +24,7 @@ It may take time to review — thanks for your patience.
 
 1. `src/infoFile.ts` (TOML parse + validation of `exercises/info.toml`)
 2. `src/exercise.ts` (`tsc --noEmit` + `vitest run` + `tsx` run, 30s timeout)
-3. `src/appState.ts` (same state-file format as `.rustlings-state.txt`)
+3. `src/appState.ts` (progress tracking in `.typescriptlings-state.txt`)
 4. Commands: `run [name]`, `hint [name?]`, `reset <name>`, `check-all`
 5. `tests/` fixture mirror (`compile_success/failure`, `test_success/failure`) + vitest integration
 6. `dev check` validator before bulk porting:
@@ -80,7 +80,7 @@ Include links to TypeScript docs."""
 | `name`                | yes      | —       | file `name.ts`, unique          |
 | `dir`                 | no       | —       | subdir of `exercises/`          |
 | `test`                | no       | `true`  | `false` = compile/run only      |
-| `strictLint`          | no       | `false` | maps rustlings `strict_clippy`  |
+| `strictLint` | no | `false` | deny all eslint warnings |
 | `input_files`         | no       | `[]`    | data files read by the exercise |
 | `hint`                | yes      | —       | non-empty                       |
 | `skip_check_unsolved` | no       | `false` | only already-passing intros     |
