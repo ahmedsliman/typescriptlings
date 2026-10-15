@@ -80,7 +80,7 @@ Include links to TypeScript docs."""
 | `name`                | yes      | —       | file `name.ts`, unique          |
 | `dir`                 | no       | —       | subdir of `exercises/`          |
 | `test`                | no       | `true`  | `false` = compile/run only      |
-| `strictLint` | no | `false` | deny all eslint warnings |
+| `strictLint`          | no       | `false` | deny all eslint warnings        |
 | `input_files`         | no       | `[]`    | data files read by the exercise |
 | `hint`                | yes      | —       | non-empty                       |
 | `skip_check_unsolved` | no       | `false` | only already-passing intros     |
