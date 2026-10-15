@@ -41,3 +41,93 @@ test = false
 hint = """
 The function name in `main` is misspelled.
 TypeScript will suggest the correct name (`console.log`)."""
+
+# VARIABLES
+
+[[exercises]]
+name = "variables1"
+dir = "01_variables"
+test = false
+hint = """
+The declaration in `main` is missing a keyword that is needed
+to create a new variable binding (`let` or `const`)."""
+
+[[exercises]]
+name = "variables2"
+dir = "01_variables"
+test = false
+hint = """
+`const` bindings cannot be reassigned. There is a keyword
+for bindings that CAN be reassigned."""
+
+[[exercises]]
+name = "variables3"
+dir = "01_variables"
+test = false
+hint = """
+A variable declared with a type but no value cannot be used yet.
+Give `x` a value of type `number`."""
+
+# FUNCTIONS
+
+[[exercises]]
+name = "functions1"
+dir = "02_functions"
+test = false
+hint = """
+`main` calls a function named `callMe` that does not exist yet.
+Define it above `main`: no parameters, no return value."""
+
+[[exercises]]
+name = "functions2"
+dir = "02_functions"
+test = false
+hint = """
+Under `strict` mode every parameter needs a type annotation.
+What type is `num`? Look at how `square` is called."""
+
+[[exercises]]
+name = "functions3"
+dir = "02_functions"
+test = false
+hint = """
+The declared return type is `boolean`, but the function body
+returns nothing. Add the `return` keyword before the expression."""
+
+# IF
+
+[[exercises]]
+name = "if1"
+dir = "03_if"
+test = false
+hint = """
+`bigger` promises to return a `number`. Both branches must keep
+that promise — return `b` instead of a string."""
+
+# PRIMITIVE TYPES
+
+[[exercises]]
+name = "primitive_types1"
+dir = "04_primitive_types"
+test = false
+hint = """
+`"5" + 3` is `"53"` (string concatenation), not `8`.
+Declare `x` as a `number` instead of a `string`."""
+
+[[exercises]]
+name = "primitive_types2"
+dir = "04_primitive_types"
+test = false
+hint = """
+The tuple is `[string, number]`: index 0 is the name, index 1
+is the age. The annotations are swapped."""
+
+# ARRAYS
+
+[[exercises]]
+name = "arrays1"
+dir = "05_arrays"
+test = false
+hint = """
+`scores` is a `number[]`. Push the number `30`
+instead of the string `"thirty"`."""

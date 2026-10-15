@@ -9,17 +9,25 @@ Small exercises to get you used to reading and writing TypeScript code.
 
 Scaffold stage — see `CONTRIBUTING.md` for the roadmap and exercise format.
 
-## Quick start (planned)
+## Quick start
+
+Prerequisite: Node.js >= 20.
 
 ```bash
+git clone https://github.com/ahmedsliman/typescriptlings.git
+cd typescriptlings
 npm install
-npm run dev -- init      # scaffold ./exercises + info.toml (mirrors `rustlings init`)
-npm run dev -- run       # run current exercise
-npm run dev -- check-all # check all exercises
-npm run dev -- hint      # show hint
-npm run dev -- reset <name>
-npm run dev              # watch mode (default)
 ```
+
+Work on an exercise manually (CLI runner in progress, see `CONTRIBUTING.md`):
+
+```bash
+npx tsc --noEmit --strict exercises/01_variables/variables1.ts  # check
+npx tsx exercises/01_variables/variables1.ts                    # run
+```
+
+Each exercise file contains a `// TODO:` comment. Fix the error until the
+typechecker passes, then compare with `solutions/` if you get stuck.
 
 ## Layout (mirrors rustlings/)
 
